@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Abdelhadi"
+      name: "khaled awad"
     };
   }
   handleInputChange = value => {
