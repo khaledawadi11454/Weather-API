@@ -1,13 +1,17 @@
 
 import React, { Component } from "react";
+import Header from "./components/header";
+import Content from "./components/content";
+
+
 // import Search from "./components/Search";
 // import SayHi, { SayHello } from "./components/WeatherItem";
 // import fakeWeatherData from "./fakeWeatherData.json";
 
 import "./App.css";
 
-import mostlyCloudy from "./img/weather-icons/mostlycloudy.svg";
-import clear from "./img/weather-icons/clear.svg";
+// import mostlyCloudy from "./img/weather-icons/mostlycloudy.svg";
+// import clear from "./img/weather-icons/clear.svg";
 
 class App extends Component {
   constructor(props) {
@@ -22,11 +26,13 @@ class App extends Component {
   render() {
     return (
       <div className="app">
+        <Header />
+        <Content />
         {/* <SayHi />
         <SayHello color="black" name={this.state.name} />
       </div>
       <Search handleInput={this.handleInputChange} /> */}
-        <header className="app__header">
+        {/* <header className="app__header">
           <div className="Search__bar">
             <input className="Search__input" type="text" placeholder="city name"/>
             <button className="Search__button">Find Weather</button>
@@ -91,7 +97,7 @@ class App extends Component {
               </div>
 
             </div>
-      </main>
+      </main> */}
       </div>
     );
   }}
