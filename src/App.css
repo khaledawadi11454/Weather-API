@@ -132,6 +132,7 @@
 .days__img{
   width: 140px;
 }
+
 @media (max-width: 650px) {
   .app__header{
     justify-content: center;
@@ -143,3 +144,4 @@
     height: auto;
   }
 }
+

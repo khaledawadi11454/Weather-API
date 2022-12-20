@@ -1,14 +1,17 @@
 
 import React, { Component } from "react";
+
+import "./App.css";
+
 import Header from "./components/header";
 import Content from "./components/content";
-
+import FakeWeather from "./data/fakeWeatherData.json";
 
 // import Search from "./components/Search";
 // import SayHi, { SayHello } from "./components/WeatherItem";
 // import fakeWeatherData from "./fakeWeatherData.json";
 
-import "./App.css";
+
 
 // import mostlyCloudy from "./img/weather-icons/mostlycloudy.svg";
 // import clear from "./img/weather-icons/clear.svg";
@@ -17,17 +20,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "khaled awad"
+    FakeWeather                              // name: "khaled awad"
     };
   }
   handleInputChange = value => {
     this.setState({ name: value });
   };
   render() {
+    console.log(this.state.FakeWeather.list[4].main.temp_min);
     return (
       <div className="app">
+
         <Header />
-        <Content />
+        <Content data={FakeWeather.list.slice(0,8)}
+        temp_min={((this.state.FakeWeather.list[4].main)-273.15)}
+        />
         {/* <SayHi />
         <SayHello color="black" name={this.state.name} />
       </div>
