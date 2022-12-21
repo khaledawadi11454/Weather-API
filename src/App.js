@@ -6,7 +6,7 @@ import "./App.css";
 import Header from "./components/header";
 import Content from "./components/content";
 import FakeWeather from "./data/fakeWeatherData.json";
-
+import Search from "./components/Search";
 // import Search from "./components/Search";
 // import SayHi, { SayHello } from "./components/WeatherItem";
 // import fakeWeatherData from "./fakeWeatherData.json";
@@ -20,20 +20,35 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    FakeWeather                              // name: "khaled awad"
+    FakeWeather,
+    isLoaded:false                          // name: "khaled awad"
     };
   }
-  handleInputChange = value => {
-    this.setState({ name: value });
-  };
+  // handleInputChange = value => {
+  //   this.setState({ name: value });
+  // };
+  fetchData = (n) => {
+    let fetchData=(`http://api.openweathermap.org/data/2.5/forecast?q=${n}&cnt=8&units=metric&appid=c55523b6700bc626b5a507864ed38219`)
+    fetch(fetchData)
+    .then(res => {return res.json();
+  })
+  .then(data => {
+      {console.log(data); this.setState({allDayW: data}); this.setState({isLoaded: true} )
+
+    }
+  }
+  )
+
+  }
   render() {
     console.log(this.state.FakeWeather.list[4].main.temp_min);
     return (
       <div className="app">
 
-        <Header />
-        <Content data={FakeWeather.list.slice(0,8)}
-        />
+       <Header event={this.fetchData}/>
+       
+        {this.state.isLoaded &&  <Content data={FakeWeather.list.slice(0,8)} />}
+
         {/* <SayHi />
         <SayHello color="black" name={this.state.name} />
       </div>

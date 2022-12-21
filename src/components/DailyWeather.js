@@ -16,7 +16,9 @@ class dailyWeather extends React.Component {
         return (
             <div className="days__status">
               <div className="days__style">
-              {this.props.other.map(e => <Smallweather key={e.dt_txt} temp={e.main.temp} time={e.dt_txt} desc={e.weather[0].main.toLowerCase()}/>)}
+              {this.props.other.map(e => <Smallweather key={e.dt_txt} temp={e.main.temp} time={e.dt_txt} 
+                              src={e.weather[0].main}
+                              />)}
             </div>
             </div>
         )
