@@ -11,7 +11,7 @@ class Content extends React.Component {
         return (
             <main className="main">
                 
-                <CurrentWeather maxT={this.props.data[0].main.temp_max} minT={this.props.data[0].main.temp_min} press={this.props.data[0].main.pressure} humid={this.props.data[0].main.humidity} desc={this.props.data[0].weather.description} />
+                <CurrentWeather img={this.props.data[0].weather[0].main.toLowerCase()} maxT={this.props.data[0].main.temp_max} minT={this.props.data[0].main.temp_min} press={this.props.data[0].main.pressure} humid={this.props.data[0].main.humidity} desc={this.props.data[0].weather.description} />
                 <DailyWeather other={this.props.data.slice(1,8)} />
             </main>
         )

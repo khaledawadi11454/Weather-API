@@ -33,7 +33,6 @@ class App extends Component {
 
         <Header />
         <Content data={FakeWeather.list.slice(0,8)}
-        temp_min={((this.state.FakeWeather.list[4].main)-273.15)}
         />
         {/* <SayHi />
         <SayHello color="black" name={this.state.name} />
